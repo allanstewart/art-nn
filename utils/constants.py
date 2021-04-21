@@ -5,9 +5,8 @@ IMAGE_SIZE = 160
 BATCH_SIZE = 16
 
 # Hyperparameters galore
-# A smaller learning rate than DCGan was helpful for not bouncing
-# out of the loss function. This is 1/10 the reference value
-LEARNING_RATE = 0.00002
+# DCGan suggests learning rate of 0.0002 which seems best for GAN training
+LEARNING_RATE = 0.0002
 
 # Adam momentum term
 BETA1 = 0.5
