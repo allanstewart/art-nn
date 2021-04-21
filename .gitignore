@@ -1,0 +1,7 @@
+source/*
+scaled/*
+gray/*
+generated/*
+*.jpg
+*.torch
+*.pyc
