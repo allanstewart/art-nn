@@ -41,7 +41,7 @@ python3 generate_gan.py picasso.torch 3 picasso1.jpg 1
 ### Results
 
 #### Classifier
-For a dataset consisting of the artists {joan-miro, pablo-picasso, rembrandt, salvador-dali, vincent-van-gogh}. The accuracy of a uniform random classifier would be 23%. The accuracy achieved with the Classifier model is over 66% using the grayscale model (which performs slightly better than RGB model in 100 epochs). I think the accuracy would be better on an easier dataset, such as by (1) only using colorful art (there's a lot of black and white sketches which are harder to tell apart or (2) using artists from vastly different styles.
+For a dataset consisting of the artists {joan-miro, pablo-picasso, rembrandt, salvador-dali, vincent-van-gogh}. The accuracy of a uniform random classifier would be 23%. The accuracy achieved with the Classifier model is over 66% using the grayscale model (which performs slightly better than RGB model in 100 epochs). I think the accuracy would be better on an easier dataset, such as by (1) only using colorful art (there's a lot of black and white sketches which are harder to tell apart) or (2) using artists from vastly different styles.
 
 #### GAN
 I trained GANs on Picasso, Miro, and Dali. Here's an example for Picasso at 100 epochs

@@ -98,7 +98,6 @@ for epoch in range(NUM_EPOCHS):
     for i, data in enumerate(dataloader):
         # Generate labels/noise
         real_images = data[0]
-        print(real_images.size())
         real_labels = torch.full((real_images.size(0),), REAL_LABEL, dtype=torch.float)
         fake_labels = torch.full((real_images.size(0),), FAKE_LABEL, dtype=torch.float)
         noise = torch.randn(real_images.size(0), NZ)
