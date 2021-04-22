@@ -86,7 +86,7 @@ generator = Generator(latent_size=NZ, image_size=IMAGE_SIZE, num_channels=num_ch
 discriminator = Discriminator(num_channels=num_channels)
 
 loss_fn = BCELoss()
-optimizer_g = Adam(generator.parameters(), lr=LEARNING_RATE)
+optimizer_g = Adam(generator.parameters(), lr=LEARNING_RATE, betas=(BETA1, 0.999))
 optimizer_d = Adam(discriminator.parameters(), lr=LEARNING_RATE, betas=(BETA1, 0.999))
 
 print("Generator")

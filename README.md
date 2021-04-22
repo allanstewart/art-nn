@@ -45,5 +45,5 @@ For a dataset consisting of the artists {joan-miro, pablo-picasso, rembrandt, sa
 
 #### GAN
 I trained GANs on Picasso, Miro, and Dali. Here's an example for Picasso at 100 epochs
-![Picasso generated art](/doc/picasso6.jpg)
+![Picasso generated art](/doc/picasso36.jpg)
 The art looks like paintings with the right strokes and colors, but is not yet a coherent artwork. I think that the GAN performance could be improved by filtering the input images to examples with a more uniform style. As it is, the artists are very creative and each input artwork is quite different.
