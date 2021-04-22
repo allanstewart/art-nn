@@ -3,6 +3,7 @@ import torch
 def weights_init(m):
     """
     DCGAN initialization hyperparameters
+    Verbatim from https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html
     """
     classname = m.__class__.__name__
     if classname.find('Conv') != -1:

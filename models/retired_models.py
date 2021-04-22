@@ -16,7 +16,7 @@ class OldClassifier(Module):
     """
     This is a standard CNN
         Conv/ReLU -> Max Pool -> Conv -> Max Pool -> Dropout -> MLP
-    It performs worse than the discriminator-based model (50% acc vs 70% acc)
+    It performs worse than the discriminator-based model (50% acc vs >66% acc)
     """
     def __init__(self, num_classes, image_size, num_channels):
         super(OldClassifier, self).__init__()
@@ -44,6 +44,9 @@ class OldGenerator(Module):
     Generator model using ConvTranspose2d to sequentially
     expand the image by 2x2 each time. However, it has a checkerboarding
     effect which makes it worse than the Upscale based Generator model.
+
+    Adapted from https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html
+    to fit 160x160px
     """
     NUM_FEATURE_MAPS = 8
 

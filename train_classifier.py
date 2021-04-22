@@ -1,3 +1,17 @@
+"""
+Trains a multiclass classifier on images, using a classifier
+very similar to the Discriminator in the GAN.
+
+Images must be present in the scaled/ folder or gray/ (for grayscale).
+
+No parameters, but it will ask you about options when you execute.
+
+It evals against a test set of 200 images for each epoch, printing out
+the multiclass accuracy.
+
+The script will save the classifier model, but a script to run the
+classifier independently isn't completed yet.
+"""
 import numpy
 from PIL import Image
 import sys

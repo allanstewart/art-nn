@@ -1,4 +1,11 @@
-#!/bin/python3
+"""
+Script for downloading art images for training/test data
+The script will populate source/, scaled/, and gray/ folders.
+Source will be full size, whereas scaled and gray are 160x160px.
+
+usage: Pipe in a list of wikiart artist urls. For example:
+echo "https://www.wikiart.org/en/leonardo-da-vinci" | python3 download.py
+"""
 from bs4 import BeautifulSoup
 from PIL import Image, ImageOps
 import os

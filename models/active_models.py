@@ -12,6 +12,11 @@ from torch.nn import (
 )
 
 class Generator(Module):
+    """
+    DCGan generator using upsample. It has less jaggies than Conv2dTranspose
+
+    Adapted from https://github.com/eriklindernoren/PyTorch-GAN/blob/master/implementations/dcgan/dcgan.py
+    """
     def __init__(self, latent_size, image_size, num_channels):
         super(Generator, self).__init__()
         self.image_size = image_size
@@ -37,6 +42,12 @@ class Generator(Module):
         return self.layers(out)
 
 class Discriminator(Module):
+    """
+    DCGan discriminator 
+
+    Inspired by https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html
+    Adapted to 160x160px
+    """
     NUM_FEATURE_MAPS = 8
 
     def __init__(self, num_channels):
@@ -66,8 +77,10 @@ class Discriminator(Module):
     def forward(self, x):
         return self.layers(x)
 
-# Multi-classifier
 class Classifier(Module):
+    """
+    Essentially the same model as above, but multi-class instead of binary
+    """
     NUM_FEATURE_MAPS = 8
 
     def __init__(self, num_channels, num_classes):
