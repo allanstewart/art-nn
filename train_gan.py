@@ -74,7 +74,6 @@ output_imagefname = input("File name of generated image (.jpg) [leave blank if n
 output_modelfname = input("File name of trained model [leave blank if not needed]: ")
 
 print("LET'S GOOOOOOO!")
-dset.ImageFolder.pil_loader = lambda x: print(x)
 dataset = dset.ImageFolder(
     root=root,
     transform=data_transforms,

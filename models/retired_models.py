@@ -18,19 +18,21 @@ class OldClassifier(Module):
         Conv/ReLU -> Max Pool -> Conv -> Max Pool -> Dropout -> MLP
     It performs worse than the discriminator-based model (50% acc vs >66% acc)
     """
+    NUM_FEATURE_MAPS = 8
+
     def __init__(self, num_classes, image_size, num_channels):
         super(OldClassifier, self).__init__()
         self.cnn = Sequential(
-            Conv2d(num_channels, ndf, kernel_size=5, stride=1, padding=2),
+            Conv2d(num_channels, self.NUM_FEATURE_MAPS, kernel_size=5, stride=1, padding=2),
             ReLU(inplace=True),
             MaxPool2d(kernel_size=2, stride=2),
-            Conv2d(ndf, ndf * 2, kernel_size=5, stride=1, padding=2),
+            Conv2d(self.NUM_FEATURE_MAPS, self.NUM_FEATURE_MAPS * 2, kernel_size=5, stride=1, padding=2),
             ReLU(inplace=True),
             MaxPool2d(kernel_size=2, stride=2),
         )
         self.mlp_with_dropout = Sequential(
             Dropout(0.25),
-            Linear(ndf * 2 * (image_size // 4) ** 2, 50),
+            Linear(self.NUM_FEATURE_MAPS * 2 * (image_size // 4) ** 2, 50),
             Linear(50, num_classes),
         )
 
